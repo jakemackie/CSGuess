@@ -59,7 +59,7 @@
         Random randomInt = new Random();
         int targetInt = randomInt.Next(1, maxInt); // 101 exclusive to include 100.
 
-        // Call the Game method, passing the target_num as a parameter.
+        // Call the Game method, passing the targetInt & maxInt as parameters.
         Game(targetInt, maxInt);
     }
 } 
