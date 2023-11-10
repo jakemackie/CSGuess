@@ -5,33 +5,9 @@
     Description: This C# console application implements a simple number guessing game.
     
     Author: vswc
-    Version: 1.1
+    Version: 1.1 (stable)
     Date: November 10, 2023
 
-    Usage:
-        1. Run the program.
-        2. Enter the maximum number for the guessing range.
-        3. Guess the number until you get it right.
-    
-    Comments:
-        - The game provides feedback ("Higher," "Lower") to guide the user.
-        - The game terminates when the correct number is guessed.
-        - This project is licensed under the MIT License (see below).
-
-    Output:
-        "Set a maximum number:"
-    
-    Input:
-        int (maximum number for the guessing range)
-    
-    Output:
-        "What number (between 1-max) am I thinking of?"
-    
-    Input:
-        int (user's guess)
-
-    Output:
-        "Higher" | "Lower" | "You guessed it! I was thinking of X"
 */
 
 using System.Diagnostics;
