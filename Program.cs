@@ -1,74 +1,107 @@
+﻿/*
+    MIT License
+
+    Project: Number Guessing Game
+    Description: This C# console application implements a simple number guessing game.
+    
+    Author: vswc
+    Version: 1.1
+    Date: November 10, 2023
+
+    Usage:
+        1. Run the program.
+        2. Enter the maximum number for the guessing range.
+        3. Guess the number until you get it right.
+    
+    Comments:
+        - The game provides feedback ("Higher," "Lower") to guide the user.
+        - The game terminates when the correct number is guessed.
+        - This project is licensed under the MIT License (see below).
+
+    Output:
+        "Set a maximum number:"
+    
+    Input:
+        int (maximum number for the guessing range)
+    
+    Output:
+        "What number (between 1-max) am I thinking of?"
+    
+    Input:
+        int (user's guess)
+
+    Output:
+        "Higher" | "Lower" | "You guessed it! I was thinking of X"
+*/
+
 using System.Diagnostics;
 
 class Program
-{
-    // Method where the guessing game logic resides.
-    static void Game(int targetInt, int maxInt) // Parameter: the number the user must guess.
+{    
+    static void Game(int targetInt, int maxInt) 
     {
         Stopwatch stopwatch = new Stopwatch();
-        bool gameActive = true; // Variable to track the game status (active/inactive).
+        bool gameActive = true; 
         stopwatch.Start();
 
-        // Main game loop: continues until the user guesses the correct number.
+        
         while (gameActive)
         {
-            int guess; // Declare a variable to store the user's guess.
+            int guess; 
             Console.WriteLine($"What number (between 1-{maxInt}) am I thinking of?");
-            string? userInput = Console.ReadLine(); // Read input from terminal as possible string.
+            string? userInput = Console.ReadLine(); 
 
-            if (!int.TryParse(userInput, out guess)) // If we can't parse the string, handle the error.
+            if (!int.TryParse(userInput, out guess)) 
             {
                 Console.WriteLine("Invalid input, please enter a valid integer.");
                 Thread.Sleep(3000);
-                return; // Exit if the input is not a valid integer.
+                return; 
             }
 
-            // Guess evaluation logic
-            // If the guess is higher than the target number:
+            
+            
             if (guess > targetInt)
             {
-                Console.WriteLine("Lower."); // Provide a hint to guess lower next time.
+                Console.WriteLine("Lower."); 
             }
-            // If the guess is lower than the target number:
+            
             else if (guess < targetInt)
             {
-                Console.WriteLine("Higher."); // Provide a hint to guess higher next time.
+                Console.WriteLine("Higher."); 
             }
-            // If the guess is correct:
+            
             else
             {
                 stopwatch.Stop();
                 double elapsedSeconds = Math.Round(stopwatch.Elapsed.TotalSeconds, 2);
 
-                Console.ForegroundColor = ConsoleColor.Green; // Setting a green console color.
-                Console.WriteLine($"Guessed in {elapsedSeconds}s! I was thinking of {targetInt}"); // Success message.
-                Console.ResetColor(); // Resetting the color of the terminal back to default.
+                Console.ForegroundColor = ConsoleColor.Green; 
+                Console.WriteLine($"Guessed in {elapsedSeconds}s! I was thinking of {targetInt}"); 
+                Console.ResetColor(); 
 
-                gameActive = false; // Set the game status to false, ending the game loop.
+                gameActive = false; 
             }
         }
-        // Close the game after 3 seconds
+        
         Thread.Sleep(3000);
     }
 
-    // Main entry point of the application.
     static void Main(string[] args)
     {
-        int maxInt; // Declare expected integer
+        int maxInt; 
         Console.WriteLine("Set a maximum number:");
-        string ?userInput = Console.ReadLine(); // Read input from terminal as possible string.
+        string ?userInput = Console.ReadLine(); 
 
-        if (!int.TryParse(userInput, out maxInt)) // If we can't parse the string, handle the error.
+        if (!int.TryParse(userInput, out maxInt)) 
         {
             Console.WriteLine("Invalid input, please enter a valid integer.");
             Thread.Sleep(3000);
-            return; // Exit if the input is not a valid integer.
+            return; 
         }
-        // Generate and store a random integer between 1 and 100.
+        
         Random randomInt = new Random();
-        int targetInt = randomInt.Next(1, maxInt); // 101 exclusive to include 100.
+        int targetInt = randomInt.Next(1, maxInt); 
 
-        // Call the Game method, passing the targetInt & maxInt as parameters.
         Game(targetInt, maxInt);
     }
 } 
