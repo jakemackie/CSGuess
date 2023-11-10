@@ -1,16 +1,47 @@
 # GuessingGame
 
-A simple `C#` console application. This game asks the user to pick a maximum number, then starts the game of guessing.
+This is a simple console application written in C# that allows the user to play a number guessing game. The program generates a random target number between 1 and a user-defined maximum number. The user is then prompted to guess the number, and the program provides hints (higher or lower) based on the user's input until the correct number is guessed.
 
-## How to play
+## How to Play
 
-> After choosing a maximum number, user will be prompted with:
-> 
+1. Run the application.
+2. Set a maximum number when prompted.
+3. Guess the number that the program is thinking of.
+4. Receive hints (higher or lower) from the program.
+5. Keep guessing until you correctly guess the number.
+6. Enjoy the success message when you guess the number correctly!
 
-```bash
-What number (between 1-X) am I thinking of?
+## Example Usage
+
+```
+Set a maximum number:
+100
+What number (between 1-100) am I thinking of?
+50
+Higher.
+What number (between 1-100) am I thinking of?
+75
+Lower.
+What number (between 1-100) am I thinking of?
+63
+Higher.
+What number (between 1-100) am I thinking of?
+69
+Lower.
+What number (between 1-100) am I thinking of?
+66
+You guessed it! I was thinking of 66
+
 ```
 
-As the player, simply **input a number** between the values and the console will tell you whether you need to aim **Higher or Lower.**
+## Dependencies
 
-Once the target number has been guessed the console will output green text to let the user know they have completed the game. This will be displayed for 3 seconds before the window closes.
+This application does not have any external dependencies.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
