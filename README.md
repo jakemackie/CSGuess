@@ -1,6 +1,6 @@
-# GuessingGame
+# CSGuess
 
-This is a simple console application written in C# that allows the user to play a number guessing game. The program generates a random target number between 1 and a user-defined maximum number. The user is then prompted to guess the number, and the program provides hints (higher or lower) based on the user's input until the correct number is guessed.
+This is a simple console application written in csharp that allows the user to play a number guessing game. The program generates a random target number between 1 and a user-defined maximum number. The user is then prompted to guess the number, and the program provides hints (higher or lower) based on the user's input until the correct number is guessed.
 
 ## How to Play
 
