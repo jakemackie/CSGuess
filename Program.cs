@@ -1,9 +1,13 @@
+using System.Diagnostics;
+
 class Program
 {
     // Method where the guessing game logic resides.
     static void Game(int targetInt, int maxInt) // Parameter: the number the user must guess.
     {
+        Stopwatch stopwatch = new Stopwatch();
         bool gameActive = true; // Variable to track the game status (active/inactive).
+        stopwatch.Start();
 
         // Main game loop: continues until the user guesses the correct number.
         while (gameActive)
@@ -33,8 +37,11 @@ class Program
             // If the guess is correct:
             else
             {
+                stopwatch.Stop();
+                double elapsedSeconds = Math.Round(stopwatch.Elapsed.TotalSeconds, 2);
+
                 Console.ForegroundColor = ConsoleColor.Green; // Setting a green console color.
-                Console.WriteLine($"You guessed it! I was thinking of {targetInt}"); // Success message.
+                Console.WriteLine($"Guessed in {elapsedSeconds}s! I was thinking of {targetInt}"); // Success message.
                 Console.ResetColor(); // Resetting the color of the terminal back to default.
 
                 gameActive = false; // Set the game status to false, ending the game loop.
