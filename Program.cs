@@ -1,4 +1,4 @@
-﻿class Program
+class Program
 {
     // Method where the guessing game logic resides.
     static void Game(int targetInt, int maxInt) // Parameter: the number the user must guess.
@@ -15,6 +15,7 @@
             if (!int.TryParse(userInput, out guess)) // If we can't parse the string, handle the error.
             {
                 Console.WriteLine("Invalid input, please enter a valid integer.");
+                Thread.Sleep(3000);
                 return; // Exit if the input is not a valid integer.
             }
 
@@ -53,6 +54,7 @@
         if (!int.TryParse(userInput, out maxInt)) // If we can't parse the string, handle the error.
         {
             Console.WriteLine("Invalid input, please enter a valid integer.");
+            Thread.Sleep(3000);
             return; // Exit if the input is not a valid integer.
         }
         // Generate and store a random integer between 1 and 100.
