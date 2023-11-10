@@ -1,7 +1,7 @@
 ﻿/*
     MIT License
 
-    Project: Number Guessing Game
+    Project: CSGuess
     Description: This C# console application implements a simple number guessing game.
     
     Author: vswc
@@ -52,7 +52,7 @@ class Program
                 double elapsedSeconds = Math.Round(stopwatch.Elapsed.TotalSeconds, 2);
 
                 Console.ForegroundColor = ConsoleColor.Green; 
-                Console.WriteLine($"Guessed in {elapsedSeconds}s! I was thinking of {targetInt}"); 
+                Console.WriteLine($"Guessed in {elapsedSeconds}s! ({targetInt})"); 
                 Console.ResetColor(); 
 
                 gameActive = false; 
