@@ -62,4 +62,4 @@
         // Call the Game method, passing the target_num as a parameter.
         Game(targetInt, maxInt);
     }
-}  
+}
