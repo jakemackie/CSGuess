@@ -4,7 +4,7 @@
     Project: CSGuess
     Description: This C# console application implements a simple number guessing game.
     
-    Author: vswc
+    Author: jakemackie
     Version: 1.1 (stable)
     Date: November 10, 2023
 
